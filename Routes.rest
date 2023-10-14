@@ -1,0 +1,4 @@
+GET http://localhost:8080/favorites
+
+### Get by ID
+GET http://localhost:8080/favorites/652ae27fcd1740368fec5e1e
