@@ -1,4 +1,25 @@
 GET http://localhost:8080/favorites
-
 ### Get by ID
 GET http://localhost:8080/favorites/652ae27fcd1740368fec5e1e
+### Add a new book
+POST http://localhost:8080/favorites
+content-type: application/json
+
+{
+    "title": "Rhythm of War",
+    "author": "Brandon Sanderson",
+    "ranking": 5
+}
+
+### Edit a book
+PUT http://localhost:8080/favorites/652b1aa0a8fb22579b4beff9
+content-type: application/json
+
+{
+    "title": "Rhythm of War",
+    "author": "Brandon Sanderson",
+    "ranking": 4
+}
+
+### Delete a book
+DELETE http://localhost:8080/favorites/652b1aa0a8fb22579b4beff9
