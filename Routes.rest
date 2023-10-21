@@ -41,7 +41,7 @@ content-type: application/json
 }
 
 ### Edit a book using render
-PUT https://favorites-gem3.onrender.com/favorites/652b710b378c0309f9c409de
+PUT https://favorites-gem3.onrender.com/favorites/65343d3973bece0c57b7dd26
 content-type: application/json
 
 {
@@ -50,5 +50,15 @@ content-type: application/json
     "ranking": 4
 }
 
+### Test
+PUT https://favorites-gem3.onrender.com/favorites/65343d3973bece0c57b7dd26
+content-type: application/json
+
+{
+    "title": "Yumi and the Nighmare Painter",
+    "author": "Brandon Sanderson",
+    "ranking": "STRING"
+}
+
 ### Delete a book using render
-DELETE https://favorites-gem3.onrender.com/favorites/653438ef55355825ce9f18e8
+DELETE https://favorites-gem3.onrender.com/favorites/65343d3c73bece0c57b7dd27
