@@ -7,11 +7,20 @@ const getAll = async (req, res, next) => {
     .db("favorites")
     .collection("favorites")
     .find();
-  result.toArray().then((lists) => {
+    if (result)
+  {
+    result.toArray().then((lists) => {
     res.setHeader("Content-Type", "application/json");
-    res.status(200).json(lists);
-  });
-  // console.log(result);
+    res.status(200).json(lists)
+      });
+    }
+  else {
+      res
+        .status(500)
+        .json(
+          result.error || "ERROR: Something went wrong, this book could not be found."
+        );
+  };
 };
 
 const getSingle = async (req, res, next) => {
@@ -21,10 +30,20 @@ const getSingle = async (req, res, next) => {
     .db("favorites")
     .collection("favorites")
     .find({ _id: bookId });
-  result.toArray().then((lists) => {
+  if (result)
+  {
+    result.toArray().then((lists) => {
     res.setHeader("Content-Type", "application/json");
-    res.status(200).json(lists[0]);
-  });
+    res.status(200).json(lists[0])
+      });
+    }
+  else {
+      res
+        .status(500)
+        .json(
+          result.error || "ERROR: Something went wrong, this book could not be found."
+        );
+  };
 };
 
 const postBook = async (req, res, next) => {
