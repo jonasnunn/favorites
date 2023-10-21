@@ -41,7 +41,7 @@ content-type: application/json
 }
 
 ### Edit a book using render
-PUT http://localhost:8080/favorites/652b6fc8378c0309f9c409dd
+PUT https://favorites-gem3.onrender.com/favorites/652b710b378c0309f9c409de
 content-type: application/json
 
 {
@@ -51,4 +51,4 @@ content-type: application/json
 }
 
 ### Delete a book using render
-DELETE http://localhost:8080/favorites/652b6fc8378c0309f9c409dd
+DELETE https://favorites-gem3.onrender.com/favorites/653438ef55355825ce9f18e8
