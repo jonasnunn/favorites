@@ -22,4 +22,33 @@ content-type: application/json
 }
 
 ### Delete a book
-DELETE http://localhost:8080/favorites/652b1aa0a8fb22579b4beff9
+DELETE http://localhost:8080/favorites/653412b38882f6553b8a53eb
+
+### Get all render
+GET https://favorites-gem3.onrender.com/favorites
+
+### Get by ID render
+GET https://favorites-gem3.onrender.com/favorites/652ae27fcd1740368fec5e1e
+
+### Add a new book with render
+POST https://favorites-gem3.onrender.com/favorites
+content-type: application/json
+
+{
+    "title": "Yumi and the Nighmare Painter",
+    "author": "Brandon Sanderson",
+    "ranking": 5
+}
+
+### Edit a book using render
+PUT http://localhost:8080/favorites/652b6fc8378c0309f9c409dd
+content-type: application/json
+
+{
+    "title": "Yumi and the Nighmare Painter",
+    "author": "Brandon Sanderson",
+    "ranking": 4
+}
+
+### Delete a book using render
+DELETE http://localhost:8080/favorites/652b6fc8378c0309f9c409dd

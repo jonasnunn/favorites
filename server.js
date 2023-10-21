@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const mongodb = require("./db/connect");
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./swagger-output.json");
+const cors = require("cors");
+const {} = './validation.js';
 
 
 const port = process.env.PORT || 8080;
@@ -16,7 +18,8 @@ app
     next();
   })
   .use("/", require("./routes"))
-  .use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+  .use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+  .use(cors());
 
 mongodb.initDb((err, mongodb) => {
   if (err) {
