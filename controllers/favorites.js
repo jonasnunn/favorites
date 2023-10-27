@@ -51,6 +51,10 @@ const postBook = async (req, res, next) => {
     title: req.body.title,
     author: req.body.author,
     ranking: req.body.ranking,
+    genre: req.body.genre,
+    wordCount: req.body.wordCount,
+    year: req.body.year,
+    series: req.body.series,
   };
   const result = await mongodb
     .getDb()

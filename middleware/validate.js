@@ -5,6 +5,10 @@ const validateBook = (req, res, next) => {
     title: 'required|string',
     author: 'required|string',
     ranking: 'required|numeric',
+    genre: 'required|string',
+    wordCount: 'required|numeric',
+    year: 'required|numeric',
+    series: 'required|string', 
   };
   validator(req.body, validationRule, {}, (err, status) => {
     if (!status) {

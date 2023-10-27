@@ -6,9 +6,13 @@ POST http://localhost:8080/favorites
 content-type: application/json
 
 {
-    "title": "Rhythm of War",
+    "title": "The Way of Kings",
     "author": "Brandon Sanderson",
-    "ranking": 5
+    "ranking": 4,
+    "genre": "fantasy",
+    "wordCount": 383389,
+    "year": 2010,
+    "series": "yes"
 }
 
 ### Edit a book
@@ -22,7 +26,7 @@ content-type: application/json
 }
 
 ### Delete a book
-DELETE http://localhost:8080/favorites/653412b38882f6553b8a53eb
+DELETE http://localhost:8080/favorites/653c2526cc2f9cfdc4fa16e8
 
 ### Get all render
 GET https://favorites-gem3.onrender.com/favorites
@@ -62,3 +66,91 @@ content-type: application/json
 
 ### Delete a book using render
 DELETE https://favorites-gem3.onrender.com/favorites/65343d3c73bece0c57b7dd27
+
+
+###
+###
+### POST STATMENTS TO ADD DATA BACK IN ###
+###
+###
+
+
+### BOOK 1
+POST https://favorites-gem3.onrender.com/favorites
+content-type: application/json
+
+{
+    "title": "The Way of Kings",
+    "author": "Brandon Sanderson",
+    "ranking": 4,
+    "genre": "fantasy",
+    "wordCount": 383389,
+    "year": 2010,
+    "series": "yes"
+}
+
+### BOOK 2
+POST https://favorites-gem3.onrender.com/favorites
+content-type: application/json
+
+{
+    "title": "Words of Radiance",
+    "author": "Brandon Sanderson",
+    "ranking": 2,
+    "genre": "fantasy",
+    "wordCount": 399431,
+    "year": 2014,
+    "series": "yes"
+}
+
+### BOOK 3
+POST https://favorites-gem3.onrender.com/favorites
+content-type: application/json
+
+{
+    "title": "Oathbringer",
+    "author": "Brandon Sanderson",
+    "ranking": 1,
+    "genre": "fantasy",
+    "wordCount": 451912,
+    "year": 2017,
+    "series": "yes"
+}
+
+### BOOK 4
+POST https://favorites-gem3.onrender.com/favorites
+content-type: application/json
+
+{
+    "title": "Rhythm of War",
+    "author": "Brandon Sanderson",
+    "ranking": 3,
+    "genre": "fantasy",
+    "wordCount": 455891,
+    "year": 2020,
+    "series": "yes"
+}
+
+### BOOK 5
+POST https://favorites-gem3.onrender.com/favorites
+content-type: application/json
+
+{
+    "title": "Yumi and the Nightmare Painter",
+    "author": "Brandon Sanderson",
+    "ranking": 6,
+    "genre": "fantasy",
+    "wordCount": 113455,
+    "year": 2023,
+    "series": "no"
+}
+
+### BOOK 6
+POST https://favorites-gem3.onrender.com/favorites
+content-type: application/json
+
+{
+    "title": "The Eye of the World",
+    "author": "Robert Jordan",
+    "ranking": 5
+}
