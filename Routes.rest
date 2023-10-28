@@ -1,32 +1,38 @@
+
 GET http://localhost:8080/favorites
 ### Get by ID
-GET http://localhost:8080/favorites/652ae27fcd1740368fec5e1e
+GET http://localhost:8080/favorites/653c30d1ed5080696a91794
 ### Add a new book
 POST http://localhost:8080/favorites
 content-type: application/json
 
 {
-    "title": "The Way of Kings",
+    "title": "Yumi and the Nightmare Painter",
     "author": "Brandon Sanderson",
-    "ranking": 4,
+    "ranking": 6,
     "genre": "fantasy",
-    "wordCount": 383389,
-    "year": 2010,
-    "series": "yes"
+    "wordCount": 113455,
+    "year": 2023,
+    "series": "no"
 }
 
+
 ### Edit a book
-PUT http://localhost:8080/favorites/652b1aa0a8fb22579b4beff9
+PUT http://localhost:8080/favorites/653c2662f20d0f65f1df8e54
 content-type: application/json
 
 {
-    "title": "Rhythm of War",
-    "author": "Brandon Sanderson",
-    "ranking": 4
+    "title": "The Eye of the World",
+    "author": "Robert Jordan",
+    "ranking": 5,
+    "genre": "fantasy",
+    "wordCount": 300147,
+    "year": 1990,
+    "series": "yes"
 }
 
 ### Delete a book
-DELETE http://localhost:8080/favorites/653c2526cc2f9cfdc4fa16e8
+DELETE http://localhost:8080/favorites/653c0e3a1c2bcc4abce315
 
 ### Get all render
 GET https://favorites-gem3.onrender.com/favorites
@@ -52,16 +58,6 @@ content-type: application/json
     "title": "Yumi and the Nighmare Painter",
     "author": "Brandon Sanderson",
     "ranking": 4
-}
-
-### Test
-PUT https://favorites-gem3.onrender.com/favorites/65343d3973bece0c57b7dd26
-content-type: application/json
-
-{
-    "title": "Yumi and the Nighmare Painter",
-    "author": "Brandon Sanderson",
-    "ranking": "STRING"
 }
 
 ### Delete a book using render
@@ -152,5 +148,9 @@ content-type: application/json
 {
     "title": "The Eye of the World",
     "author": "Robert Jordan",
-    "ranking": 5
+    "ranking": 5,
+    "genre": "fantasy",
+    "wordCount": 300147,
+    "year": 1990,
+    "series": "yes"
 }

@@ -23,6 +23,24 @@ const validateBook = (req, res, next) => {
   });
 };
 
+const validateId = (req, res, next) => {
+  const validationRule = {
+    id: 'required|alpha_num|size:24'
+  }
+  validator(req.params, validationRule, {}, (err, status) => {
+    if (!status) {
+      res.status(412).send({
+        success: false,
+        message: 'Validation failed',
+        data: err
+      });
+    } else {
+      next();
+    }
+  });
+}
+
 module.exports = {
-  validateBook
+  validateBook,
+  validateId
 };

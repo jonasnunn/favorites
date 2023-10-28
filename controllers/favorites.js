@@ -47,7 +47,7 @@ const getSingle = async (req, res, next) => {
 };
 
 const postBook = async (req, res, next) => {
-  const newContact = {
+  const newBook = {
     title: req.body.title,
     author: req.body.author,
     ranking: req.body.ranking,
@@ -60,7 +60,7 @@ const postBook = async (req, res, next) => {
     .getDb()
     .db("favorites")
     .collection("favorites")
-    .insertOne(newContact);
+    .insertOne(newBook);
   if (result.acknowledged) {
     res.status(201).json(result);
   } else {
@@ -78,6 +78,10 @@ const editBook = async (req, res, next) => {
     title: req.body.title,
     author: req.body.author,
     ranking: req.body.ranking,
+    genre: req.body.genre,
+    wordCount: req.body.wordCount,
+    year: req.body.year,
+    series: req.body.series,
   };
   const result = await mongodb
     .getDb()
@@ -109,10 +113,37 @@ const deleteBook = async (req, res, next) => {
   }
 };
 
+
+const postUser = async (req, res, next) => {
+  const newUser = {
+    email: req.body.email,
+    password: req.body.password,
+  };
+  const result = await mongodb
+    .getDb()
+    .db("favorites")
+    .collection("users")
+    .insertOne(newUser);
+  if (result.acknowledged) {
+    res.status(201).json(result);
+  } else {
+    res
+      .status(500)
+      .json(
+        result.error || "ERROR: Something went wrong, this user was not added."
+      );
+  }
+};
+
+
+
+
+
 module.exports = {
   getAll,
   getSingle,
   postBook,
   editBook,
-  deleteBook
+  deleteBook,
+  postUser
 };
