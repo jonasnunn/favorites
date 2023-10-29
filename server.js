@@ -32,6 +32,16 @@ mongodb.initDb((err, mongodb) => {
   }
 });
 
+app.use(session({
+  secret: process.env.PASSPORT_LONG_SECRET,
+  resave: false, 
+  saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
 passport.use(new GoogleStrategy({
@@ -50,3 +60,14 @@ function(accessToken, refreshToken, profile, cb) {
   );
 }
 ));
+
+app.get("/auth/google", 
+    passport.authenticate("google", { scope: ["profile"] })
+);
+
+app.get("/auth/google/secrets", 
+  passport.authenticate("google", { failureRedirect: "/login" }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect("/secrets");
+});
