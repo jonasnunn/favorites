@@ -32,42 +32,42 @@ mongodb.initDb((err, mongodb) => {
   }
 });
 
-app.use(session({
-  secret: process.env.PASSPORT_LONG_SECRET,
-  resave: false, 
-  saveUninitialized: false
-}));
+// app.use(session({
+//   secret: process.env.PASSPORT_LONG_SECRET,
+//   resave: false, 
+//   saveUninitialized: false
+// }));
 
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(passport.initialize());
+// app.use(passport.session());
 
 
-const GoogleStrategy = require("passport-google-oauth20").Strategy;
+// const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
-passport.use(new GoogleStrategy({
-  clientID: process.env.GOOGLE_CLIENT_ID,
-  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-  callbackURL: "http://localhost:3000/auth/google/secrets"
-},
-function(accessToken, refreshToken, profile, cb) {
-  User.findOrCreate(
-      { 
-          googleId: profile.id
-      }, 
-      function (err, user) {
-          return cb(err, user);
-      }
-  );
-}
-));
+// passport.use(new GoogleStrategy({
+//   clientID: process.env.GOOGLE_CLIENT_ID,
+//   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+//   callbackURL: "http://localhost:3000/auth/google/secrets"
+// },
+// function(accessToken, refreshToken, profile, cb) {
+//   User.findOrCreate(
+//       { 
+//           googleId: profile.id
+//       }, 
+//       function (err, user) {
+//           return cb(err, user);
+//       }
+//   );
+// }
+// ));
 
-app.get("/auth/google", 
-    passport.authenticate("google", { scope: ["profile"] })
-);
+// app.get("/auth/google", 
+//     passport.authenticate("google", { scope: ["profile"] })
+// );
 
-app.get("/auth/google/secrets", 
-  passport.authenticate("google", { failureRedirect: "/login" }),
-  function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect("/secrets");
-});
+// app.get("/auth/google/secrets", 
+//   passport.authenticate("google", { failureRedirect: "/login" }),
+//   function(req, res) {
+//     // Successful authentication, redirect home.
+//     res.redirect("/secrets");
+// });
