@@ -1,24 +1,24 @@
 
-GET http://localhost:8080/favorites
+GET http://localhost:8080/logout
 ### Get by ID
-GET http://localhost:8080/favorites/653c30d1ed5080696a91794
+GET http://localhost:8080/books/653c30d1ed5080696a91794
 ### Add a new book
-POST http://localhost:8080/favorites
+POST http://localhost:8080/books
 content-type: application/json
 
 {
-    "title": "Yumi and the Nightmare Painter",
-    "author": "Brandon Sanderson",
-    "ranking": 6,
+    "title": "The Eye of the World",
+    "author": "Robert Jordan",
+    "ranking": 5,
     "genre": "fantasy",
-    "wordCount": 113455,
-    "year": 2023,
-    "series": "no"
+    "wordCount": 300147,
+    "year": 1990,
+    "series": "yes"
 }
 
 
 ### Edit a book
-PUT http://localhost:8080/favorites/653c2662f20d0f65f1df8e54
+PUT http://localhost:8080/books/653c2662f20d0f65f1df8e54
 content-type: application/json
 
 {
@@ -32,16 +32,16 @@ content-type: application/json
 }
 
 ### Delete a book
-DELETE http://localhost:8080/favorites/653c0e3a1c2bcc4abce315
+DELETE http://localhost:8080/books/65458e8fca89adef5fc76bd9
 
 ### Get all render
-GET https://favorites-gem3.onrender.com/favorites
+GET https://favorites-gem3.onrender.com/books
 
 ### Get by ID render
-GET https://favorites-gem3.onrender.com/favorites/652ae27fcd1740368fec5e1e
+GET https://favorites-gem3.onrender.com/books/652ae27fcd1740368fec5e1e
 
 ### Add a new book with render
-POST https://favorites-gem3.onrender.com/favorites
+POST https://favorites-gem3.onrender.com/books
 content-type: application/json
 
 {
@@ -51,7 +51,7 @@ content-type: application/json
 }
 
 ### Edit a book using render
-PUT https://favorites-gem3.onrender.com/favorites/65343d3973bece0c57b7dd26
+PUT https://favorites-gem3.onrender.com/books/65343d3973bece0c57b7dd26
 content-type: application/json
 
 {
@@ -61,7 +61,7 @@ content-type: application/json
 }
 
 ### Delete a book using render
-DELETE https://favorites-gem3.onrender.com/favorites/65343d3c73bece0c57b7dd27
+DELETE https://favorites-gem3.onrender.com/books/65343d3c73bece0c57b7dd27
 
 
 ###
@@ -72,7 +72,7 @@ DELETE https://favorites-gem3.onrender.com/favorites/65343d3c73bece0c57b7dd27
 
 
 ### BOOK 1
-POST https://favorites-gem3.onrender.com/favorites
+POST https://favorites-gem3.onrender.com/books
 content-type: application/json
 
 {
@@ -86,7 +86,7 @@ content-type: application/json
 }
 
 ### BOOK 2
-POST https://favorites-gem3.onrender.com/favorites
+POST https://favorites-gem3.onrender.com/books
 content-type: application/json
 
 {
@@ -100,7 +100,7 @@ content-type: application/json
 }
 
 ### BOOK 3
-POST https://favorites-gem3.onrender.com/favorites
+POST https://favorites-gem3.onrender.com/books
 content-type: application/json
 
 {
@@ -114,7 +114,7 @@ content-type: application/json
 }
 
 ### BOOK 4
-POST https://favorites-gem3.onrender.com/favorites
+POST https://favorites-gem3.onrender.com/books
 content-type: application/json
 
 {
@@ -128,7 +128,7 @@ content-type: application/json
 }
 
 ### BOOK 5
-POST https://favorites-gem3.onrender.com/favorites
+POST https://favorites-gem3.onrender.com/books
 content-type: application/json
 
 {
@@ -142,7 +142,7 @@ content-type: application/json
 }
 
 ### BOOK 6
-POST https://favorites-gem3.onrender.com/favorites
+POST https://favorites-gem3.onrender.com/books
 content-type: application/json
 
 {

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const favController = require("../controllers/favorites")
+const favController = require("../controllers/books")
 const validation = require("../middleware/validate")
 
 router.get('/', favController.getAll);

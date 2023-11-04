@@ -5,7 +5,7 @@ const getAll = async (req, res, next) => {
   const result = await mongodb
     .getDb()
     .db("favorites")
-    .collection("favorites")
+    .collection("books")
     .find();
     if (result)
   {
@@ -28,7 +28,7 @@ const getSingle = async (req, res, next) => {
   const result = await mongodb
     .getDb()
     .db("favorites")
-    .collection("favorites")
+    .collection("books")
     .find({ _id: bookId });
   if (result)
   {
@@ -59,7 +59,7 @@ const postBook = async (req, res, next) => {
   const result = await mongodb
     .getDb()
     .db("favorites")
-    .collection("favorites")
+    .collection("books")
     .insertOne(newBook);
   if (result.acknowledged) {
     res.status(201).json(result);
@@ -86,7 +86,7 @@ const editBook = async (req, res, next) => {
   const result = await mongodb
     .getDb()
     .db("favorites")
-    .collection("favorites")
+    .collection("books")
     .replaceOne({ _id: bookId }, book);
   if (result.modifiedCount > 0) {
     res.status(204).send();
@@ -102,7 +102,7 @@ const deleteBook = async (req, res, next) => {
   const result = await mongodb
     .getDb()
     .db("favorites")
-    .collection("favorites")
+    .collection("books")
     .deleteOne({ _id: bookId }, true);
   if (result.deletedCount > 0) {
     res.status(200).send();

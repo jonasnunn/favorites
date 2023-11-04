@@ -5,8 +5,8 @@ const mongodb = require("./db/connect");
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./swagger-output.json");
 const cors = require("cors");
-const session = require("express-session");
-const passport = require("passport");
+// const session = require("express-session");
+// const passport = require("passport");
 const {} = './validation.js';
 
 

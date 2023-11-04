@@ -44,3 +44,12 @@ module.exports = {
   validateBook,
   validateId
 };
+
+
+// Unused Code to check for a currently logged in user.
+
+// const { requiresAuth } = require('express-openid-connect');
+
+// app.get('/profile', requiresAuth(), (req, res) => {
+//   res.send(JSON.stringify(req.oidc.user));
+// });
