@@ -1,3 +1,5 @@
+GET http://localhost:8080/login
+###
 GET http://localhost:8080/shows
 
 ### ADD NEW SHOW
@@ -15,7 +17,7 @@ content-type: application/json
 }
 
 ### Edit a show
-PUT http://localhost:8080/shows/65459c80a360033ffe9bffcc
+PUT http://localhost:8080/shows
 content-type: application/json
 
 {
@@ -33,6 +35,10 @@ content-type: application/json
 DELETE http://localhost:8080/shows/65459cff1023aadb78ffc0f8
 
 
+### Get all render
+GET https://favorites-gem3.onrender.com/shows
+### Delete Render
+DELETE https://favorites-gem3.onrender.com/shows/6545aaa4c6beabd3bc599a9d
 
 ### SHOW 1
 POST http://localhost:8080/shows

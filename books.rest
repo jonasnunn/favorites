@@ -1,7 +1,7 @@
 
 GET http://localhost:8080/logout
 ### Get by ID
-GET http://localhost:8080/books/65458d5a1bbe8583a4af7758
+GET http://localhost:8080/books
 ### Add a new book
 POST http://localhost:8080/books
 content-type: application/json

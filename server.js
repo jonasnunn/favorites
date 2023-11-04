@@ -6,8 +6,14 @@ const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("./swagger-output.json");
 const cors = require("cors");
 // const session = require("express-session");
-// const passport = require("passport");
+// const MongoDBStore = require('connect-mongodb-session')(session);
 const {} = './validation.js';
+
+
+// const store = new MongoDBStore({
+//   uri: process.env.MONGODB_URI,
+//   collection: 'sessions', // Change this to your desired collection name
+// });
 
 
 const port = process.env.PORT || 8080;
@@ -21,7 +27,15 @@ app
   })
   .use("/", require("./routes"))
   .use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument))
-  .use(cors());
+  .use(cors())
+  // .use(
+  //   session({
+  //     secret: '123456789',
+  //     resave: false,
+  //     saveUninitialized: false,
+  //     store: store,
+  //   })
+  // );
 
 mongodb.initDb((err, mongodb) => {
   if (err) {
@@ -32,42 +46,6 @@ mongodb.initDb((err, mongodb) => {
   }
 });
 
-// app.use(session({
-//   secret: process.env.PASSPORT_LONG_SECRET,
-//   resave: false, 
-//   saveUninitialized: false
-// }));
-
-// app.use(passport.initialize());
-// app.use(passport.session());
 
 
-// const GoogleStrategy = require("passport-google-oauth20").Strategy;
 
-// passport.use(new GoogleStrategy({
-//   clientID: process.env.GOOGLE_CLIENT_ID,
-//   clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-//   callbackURL: "http://localhost:3000/auth/google/secrets"
-// },
-// function(accessToken, refreshToken, profile, cb) {
-//   User.findOrCreate(
-//       { 
-//           googleId: profile.id
-//       }, 
-//       function (err, user) {
-//           return cb(err, user);
-//       }
-//   );
-// }
-// ));
-
-// app.get("/auth/google", 
-//     passport.authenticate("google", { scope: ["profile"] })
-// );
-
-// app.get("/auth/google/secrets", 
-//   passport.authenticate("google", { failureRedirect: "/login" }),
-//   function(req, res) {
-//     // Successful authentication, redirect home.
-//     res.redirect("/secrets");
-// });

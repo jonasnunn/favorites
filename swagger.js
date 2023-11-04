@@ -2,8 +2,8 @@ const swaggerAutogen = require('swagger-autogen')();
 
 const doc = {
   info: {
-    title: 'Contacts API Documentation',
-    description: 'My contacts',
+    title: 'My Favorites API Documentation',
+    description: 'My Favorites',
   },
   host: 'favorites-gem3.onrender.com',
   schemes: ['https'],
