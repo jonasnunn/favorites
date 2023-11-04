@@ -1,0 +1,77 @@
+GET http://localhost:8080/shows
+
+### ADD NEW SHOW
+POST http://localhost:8080/shows
+content-type: application/json
+
+{
+    "title": "Avatar the Last Airbender",
+    "director": "Dave Filoni",
+    "ranking": 3,
+    "genre": "fantasy",
+    "episodes": 61,
+    "year": 2005,
+    "seasons": 3
+}
+
+### Edit a show
+PUT http://localhost:8080/shows/65459c80a360033ffe9bffcc
+content-type: application/json
+
+{
+    "title": "Stranger Things",
+    "director": "The Duffer Brothers",
+    "ranking": 2,
+    "genre": "sci-fi",
+    "episodes": 34,
+    "year": 2016,
+    "seasons": 4
+}
+
+
+### Delete a show
+DELETE http://localhost:8080/shows/65459cff1023aadb78ffc0f8
+
+
+
+### SHOW 1
+POST http://localhost:8080/shows
+content-type: application/json
+
+{
+    "title": "Star Wars the Clone Wars",
+    "director": "Dave Filoni",
+    "ranking": 1,
+    "genre": "sci-fi",
+    "episodes": 121,
+    "year": 2008,
+    "seasons": 7
+}
+
+### SHOW 2
+POST http://localhost:8080/shows
+content-type: application/json
+
+{
+    "title": "Stranger Things",
+    "director": "The Duffer Brothers",
+    "ranking": 2,
+    "genre": "sci-fi",
+    "episodes": 34,
+    "year": 2016,
+    "seasons": 5
+}
+
+### SHOW 3
+POST http://localhost:8080/shows
+content-type: application/json
+
+{
+    "title": "Avatar the Last Airbender",
+    "director": "Dave Filoni",
+    "ranking": 3,
+    "genre": "fantasy",
+    "episodes": 61,
+    "year": 2005,
+    "seasons": 3
+}

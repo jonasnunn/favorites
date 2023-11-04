@@ -19,6 +19,9 @@ router.get('/', (req, res) => {
   res.send(req.oidc.isAuthenticated() ? 'Logged in' : 'Logged out');
 });
 
+// Books routes
 router.use('/books', require('./books'))
+// TV shows routes
+router.use('/shows', require('./shows'))
 
 module.exports = router;
