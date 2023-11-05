@@ -6,7 +6,7 @@ const config = {
   authRequired: false,
   auth0Logout: true,
   secret: process.env.SESSION_SECRET,
-  baseURL: 'https://favorites-gem3.onrender.com',
+  baseURL: 'http://localhost:8080',
   clientID: 'm5s6EIgdwT91Hbpb86iHHszcobQLQrEH',
   issuerBaseURL: 'https://dev-weuevtrangclj7vb.us.auth0.com'
 };
