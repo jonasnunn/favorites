@@ -1,4 +1,3 @@
-GET http://localhost:8080/login
 ###
 GET http://localhost:8080/shows
 
@@ -17,22 +16,22 @@ content-type: application/json
 }
 
 ### Edit a show
-PUT http://localhost:8080/shows
+PUT http://localhost:8080/shows/654718819f581058d2539433
 content-type: application/json
 
 {
-    "title": "Stranger Things",
-    "director": "The Duffer Brothers",
-    "ranking": 2,
-    "genre": "sci-fi",
-    "episodes": 34,
-    "year": 2016,
-    "seasons": 4
+    "title": "Avatar the Last Airbender",
+    "director": "Dave Filoni",
+    "ranking": 3,
+    "genre": "fantasy",
+    "episodes": 61,
+    "year": 2005,
+    "seasons": 5
 }
 
 
 ### Delete a show
-DELETE http://localhost:8080/shows/65459cff1023aadb78ffc0f8
+DELETE http://localhost:8080/shows/654718819f581058d2539433
 
 
 ### Get all render

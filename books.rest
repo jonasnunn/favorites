@@ -1,6 +1,4 @@
-
-GET http://localhost:8080/logout
-### Get by ID
+### 
 GET http://localhost:8080/books
 ### Add a new book
 POST http://localhost:8080/books
@@ -18,13 +16,13 @@ content-type: application/json
 
 
 ### Edit a book
-PUT http://localhost:8080/books/653c2662f20d0f65f1df8e54
+PUT http://localhost:8080/books/6547185b9f581058d2539432
 content-type: application/json
 
 {
     "title": "The Eye of the World",
     "author": "Robert Jordan",
-    "ranking": 5,
+    "ranking": 12,
     "genre": "fantasy",
     "wordCount": 300147,
     "year": 1990,
@@ -32,7 +30,7 @@ content-type: application/json
 }
 
 ### Delete a book
-DELETE http://localhost:8080/books/65458e8fca89adef5fc76bd9
+DELETE http://localhost:8080/books/6547185b9f581058d2539432
 
 ### Get all render
 GET https://favorites-gem3.onrender.com/books
